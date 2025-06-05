@@ -4,7 +4,11 @@
   "description": "Building a mini message board using ExpressJS, with templating in EJS.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +17,10 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "3.5.3"
   }
 }
