@@ -2,6 +2,7 @@ const path = require("node:path");
 const express = require("express");
 const app = express();
 const indexRouter = require("./routes/indexRouter");
+const messageRouter = require("./routes/messageRouter");
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
@@ -15,6 +16,7 @@ app.set("view engine", "ejs");
 
 /* routes */
 app.use("/", indexRouter);
+app.use("/messages", messageRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

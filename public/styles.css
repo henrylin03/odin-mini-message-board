@@ -18,6 +18,8 @@ button {
 .message-container {
   border: 1px solid black;
   padding: 1rem 1.5rem;
+  position: relative;
+  max-width: 35rem;
 }
 
 .date {
@@ -41,4 +43,22 @@ form li {
 
 textarea {
   resize: none;
+}
+
+button.open-message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 0.25rem;
+}
+
+button.open-message:hover {
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 4px;
+}
+
+footer {
+  margin-top: 1rem;
 }
