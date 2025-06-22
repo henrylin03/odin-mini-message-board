@@ -1,12 +1,12 @@
 const db = require("../db");
+const CustomNotFoundError = require("../errors/CustomNotFoundError");
 
 async function getMessageById(req, res) {
   const { messageId } = req.params;
   const message = await db.getMessageById(messageId);
 
   if (!message) {
-    res.status(404).send("Message not found");
-    return;
+    throw new CustomNotFoundError("Message not found");
   }
 
   res.render("message", {
