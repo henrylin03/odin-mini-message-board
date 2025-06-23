@@ -2,9 +2,9 @@
   "name": "odin-mini-message-board",
   "version": "1.0.0",
   "description": "Building a mini message board using ExpressJS, with templating in EJS.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
     "prepare": "husky"
   },
   "lint-staged": {
