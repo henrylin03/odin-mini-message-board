@@ -1,6 +1,7 @@
-const { randomUUID } = require("crypto");
+import { randomUUID } from "crypto";
+import { NewMessage, StoredMessage } from "./types";
 
-const messages = [
+const messages: Array<StoredMessage> = [
   { id: randomUUID(), text: "Hi there!", user: "Amando", added: new Date() },
   {
     id: randomUUID(),
@@ -10,13 +11,13 @@ const messages = [
   },
 ];
 
-const getMessageById = async (messageId) =>
+export const getMessageById = async (messageId: string) =>
   messages.find((message) => message.id === messageId);
 
-const getAllMessages = async () => messages;
+export const getAllMessages = async () => messages;
 
-const addNewMessage = async (messageData) => {
-  const newMessage = {
+export const addNewMessage = async (messageData: NewMessage) => {
+  const newMessage: StoredMessage = {
     id: randomUUID(),
     text: messageData.text,
     user: messageData.user,
@@ -27,5 +28,3 @@ const addNewMessage = async (messageData) => {
 
   return newMessage;
 };
-
-module.exports = { getMessageById, getAllMessages, addNewMessage };
