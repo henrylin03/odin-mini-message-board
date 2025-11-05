@@ -4,7 +4,7 @@
   "description": "Building a mini message board using ExpressJS, with templating in EJS.",
   "main": "app.js",
   "scripts": {
-    "start": "npx tsc && node dist/app.js",
+    "start": "node app.js",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -15,18 +15,12 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@types/dotenv": "^6.1.1",
-    "@types/express": "^5.0.3",
-    "@types/node": "^24.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
-    "prettier": "3.5.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "prettier": "3.5.3"
   }
 }

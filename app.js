@@ -1,11 +1,8 @@
-import path from "node:path";
-import express from "express";
-import dotenv from "dotenv";
-import { indexRouter } from "./routes/indexRouter.mjs";
-import { messageRouter } from "./routes/messageRouter.mjs";
-
-dotenv.config();
+const path = require("node:path");
+const express = require("express");
 const app = express();
+const indexRouter = require("./routes/indexRouter");
+const messageRouter = require("./routes/messageRouter");
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
