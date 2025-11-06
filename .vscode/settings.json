@@ -1,0 +1,7 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.wordWrap": "on",
+	"workbench.colorTheme": "Draculish",
+	"editor.tabSize": 2,
+	"html.format.unformatted": "wbr,%"
+}
