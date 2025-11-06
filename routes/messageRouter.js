@@ -5,7 +5,7 @@ const messageRouter = Router();
 messageRouter.get("/:messageId", getMessageById);
 
 messageRouter.get("/", (_req, res) => {
-  res.redirect("/");
+	res.redirect("/");
 });
 
 module.exports = messageRouter;
