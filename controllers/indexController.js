@@ -1,3 +1,4 @@
+const { body, validationResult } = require("express-validator");
 const db = require("../db/queries");
 
 async function getAllMessages(_req, res) {
