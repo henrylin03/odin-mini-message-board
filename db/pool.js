@@ -1,8 +1,10 @@
-const { Pool } = require("pg");
 require("dotenv").config();
 
-const { DB_HOST, DB_USERNAME, DB_NAME, DB_PASSWORD, DB_PORT } = process.env;
+const { Pool } = require("pg");
+
+const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+const PORT = 5432;
 
 module.exports = new Pool({
-	connectionString: `postgresql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+	connectionString: `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PORT}/${PGDATABASE}`,
 });
