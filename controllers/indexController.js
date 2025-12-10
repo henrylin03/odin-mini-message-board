@@ -5,10 +5,10 @@ async function getAllMessages(_req, res) {
 	res.render("index", { title: "Mini Messageboard", messages: messages });
 }
 
-// async function postNewMessage(req, res) {
-//   const { messageUser, messageText } = req.body;
-//   await db.addNewMessage({ user: messageUser, text: messageText });
-//   res.redirect("/");
-// }
+async function postNewMessage(req, res) {
+	const { text, username } = req.body;
+	await db.addNewMessage({ text, username });
+	res.redirect("/");
+}
 
-module.exports = { getAllMessages };
+module.exports = { getAllMessages, postNewMessage };
