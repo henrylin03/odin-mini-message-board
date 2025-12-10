@@ -4,7 +4,7 @@
 	"description": "Building a mini message board using ExpressJS, with templating in EJS.",
 	"main": "app.js",
 	"scripts": {
-		"start": "node app.js",
+		"start": "node --watch app.js",
 		"prepare": "husky",
 		"seed-db": "node db/populatedb.js"
 	},
