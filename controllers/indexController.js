@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../db/queries");
 
 async function getAllMessages(_req, res) {
 	const messages = await db.getAllMessages();
@@ -6,8 +6,8 @@ async function getAllMessages(_req, res) {
 }
 
 async function postNewMessage(req, res) {
-	const { messageUser, messageText } = req.body;
-	await db.addNewMessage({ user: messageUser, text: messageText });
+	const { text, username } = req.body;
+	await db.addNewMessage({ text, username });
 	res.redirect("/");
 }
 

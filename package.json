@@ -1,11 +1,12 @@
 {
 	"name": "odin-mini-message-board",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Building a mini message board using ExpressJS, with templating in EJS.",
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
-		"prepare": "husky"
+		"prepare": "husky",
+		"seed-db": "node db/populatedb.js"
 	},
 	"lint-staged": {
 		"*": [
@@ -22,12 +23,14 @@
 	"license": "MIT",
 	"type": "commonjs",
 	"dependencies": {
+		"dotenv": "^17.2.3",
 		"ejs": "^3.1.10",
-		"express": "^5.1.0"
+		"express": "^5.2.1",
+		"pg": "^8.16.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.4",
+		"@biomejs/biome": "2.3.8",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.2.6"
+		"lint-staged": "^16.2.7"
 	}
 }
