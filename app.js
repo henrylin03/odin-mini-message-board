@@ -4,6 +4,8 @@ const app = express();
 const indexRouter = require("./routes/indexRouter");
 const messageRouter = require("./routes/messageRouter");
 
+require("dotenv").config();
+
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
@@ -18,7 +20,7 @@ app.set("view engine", "ejs");
 app.use("/", indexRouter);
 app.use("/messages", messageRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.APP_PORT || 3000;
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}!`);
 });
