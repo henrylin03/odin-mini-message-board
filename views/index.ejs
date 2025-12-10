@@ -12,8 +12,8 @@
     <% messages.map(message => { %>
     <article class="message-container">
       <h3><%= message.text %></h3>
-      <p><%= message.user %></p>
-      <p class="date"><small><%= message.added %></small></p>
+      <p><%= message.username %></p>
+      <p class="date"><small><%= message.added_date_time %></small></p>
 
       <a href=<%= `/messages/${message.id}` %> aria-label="Open message">
         <button type="button" class="open-message">

@@ -8,6 +8,6 @@ const indexRouter = Router();
 
 indexRouter.get("/", getAllMessages);
 indexRouter.get("/new", (_req, res) => res.render("form"));
-indexRouter.post("/new", postNewMessage);
+// indexRouter.post("/new", postNewMessage);
 
 module.exports = indexRouter;
