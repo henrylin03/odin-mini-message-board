@@ -5,7 +5,8 @@
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
-		"prepare": "husky"
+		"prepare": "husky",
+		"seed-db": "node db/populatedb.js"
 	},
 	"lint-staged": {
 		"*": [
