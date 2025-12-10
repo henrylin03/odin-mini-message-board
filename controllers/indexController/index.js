@@ -1,4 +1,4 @@
-const { validationResult } = require("express-validator");
+const { validationResult, matchedData } = require("express-validator");
 const db = require("../../db/queries");
 const { validateMessage } = require("./validateMessage");
 
@@ -17,7 +17,7 @@ const postNewMessage = [
 				inputErrors: inputErrors.array(),
 			});
 
-		const { text, username } = req.body;
+		const { text, username } = matchedData(req);
 		await db.addNewMessage({ text, username });
 		res.redirect("/");
 	},
