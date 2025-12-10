@@ -3,10 +3,13 @@
 </head>
 
 <header>
+  <title>Add new message</title>
   <h1>Send Message</h1>
 </header>
 
 <main>
+  <%- include("partials/errors.ejs") %>
+  
   <form method="POST" action="/new">
     <ul>
       <li>
