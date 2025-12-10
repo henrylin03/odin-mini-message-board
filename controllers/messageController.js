@@ -1,19 +1,19 @@
-const db = require("../db");
+const db = require("../db/queries");
 const CustomNotFoundError = require("../errors/CustomNotFoundError");
 
 async function getMessageById(req, res) {
 	const { messageId } = req.params;
 	const message = await db.getMessageById(messageId);
 
-	if (!message) {
-		throw new CustomNotFoundError("Message not found");
-	}
+	if (message === null) throw new CustomNotFoundError("Message not found");
+
+	const { text, username, added_date_time } = message;
 
 	res.render("message", {
-		messageId: messageId,
-		text: message.text,
-		user: message.user,
-		added: message.added,
+		messageId,
+		text,
+		username,
+		added_date_time,
 	});
 }
 
