@@ -18,9 +18,16 @@ VALUES
 `;
 
 async function main() {
+	const databaseUrl = process.argv[2];
+	if (typeof databaseUrl === "undefined" || databaseUrl === "") {
+		throw new Error(
+			"Database URL not provided. Defaulting to production database.",
+		);
+	}
+
 	console.log("seeding...");
 	const client = new Client({
-		connectionString: process.env.PG_DATABASE_URL,
+		connectionString: databaseUrl,
 	});
 
 	await client.connect();
