@@ -11,7 +11,7 @@ const postNewMessage = [
 	validateMessage,
 	async (req, res) => {
 		const inputErrors = validationResult(req);
-		console.log("inputErrors:", inputErrors);
+
 		if (!inputErrors.isEmpty())
 			return res.status(400).render("form", {
 				inputErrors: inputErrors.array(),

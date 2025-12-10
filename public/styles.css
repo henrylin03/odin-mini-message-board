@@ -62,3 +62,7 @@ button.open-message:hover {
 footer {
 	margin-top: 1rem;
 }
+
+.errorMessage {
+	color: red;
+}
