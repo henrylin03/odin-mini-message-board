@@ -1,14 +1,14 @@
-const db = require("../db");
+const db = require("../db/queries");
 
 async function getAllMessages(_req, res) {
 	const messages = await db.getAllMessages();
 	res.render("index", { title: "Mini Messageboard", messages: messages });
 }
 
-async function postNewMessage(req, res) {
-	const { messageUser, messageText } = req.body;
-	await db.addNewMessage({ user: messageUser, text: messageText });
-	res.redirect("/");
-}
+// async function postNewMessage(req, res) {
+//   const { messageUser, messageText } = req.body;
+//   await db.addNewMessage({ user: messageUser, text: messageText });
+//   res.redirect("/");
+// }
 
-module.exports = { getAllMessages, postNewMessage };
+module.exports = { getAllMessages };
